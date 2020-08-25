@@ -1,0 +1,20 @@
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\bin\Debug\netstandard2.0\LgpDuvidas.deps.json
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\bin\Debug\netstandard2.0\LgpDuvidas.dll
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\bin\Debug\netstandard2.0\ref\LgpDuvidas.dll
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\bin\Debug\netstandard2.0\LgpDuvidas.pdb
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\obj\Debug\netstandard2.0\LgpDuvidas.csprojAssemblyReference.cache
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\obj\Debug\netstandard2.0\AppShell.xaml.g.cs
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\obj\Debug\netstandard2.0\Views\AboutPage.xaml.g.cs
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\obj\Debug\netstandard2.0\LgpDuvidas.AssemblyInfoInputs.cache
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\obj\Debug\netstandard2.0\LgpDuvidas.AssemblyInfo.cs
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\obj\Debug\netstandard2.0\LgpDuvidas.dll
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\obj\Debug\netstandard2.0\ref\LgpDuvidas.dll
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\obj\Debug\netstandard2.0\LgpDuvidas.pdb
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\obj\Debug\netstandard2.0\LgpDuvidas.csproj.CoreCompileInputs.cache
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\obj\Debug\netstandard2.0\XamlC.stamp
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\obj\Debug\netstandard2.0\Views\ChatPage.xaml.g.cs
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\obj\Debug\netstandard2.0\CustomCells\TextInViewCell .xaml.g.cs
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\obj\Debug\netstandard2.0\CustomCells\TextOutViewCell.xaml.g.cs
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
+C:\FTT\lgpduvidas\LgpDuvidas\LgpDuvidas\bin\Debug\netstandard2.0\Images\sendIcon.png

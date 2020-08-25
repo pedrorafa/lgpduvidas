@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "6tHpw+rWxBIQ7f1YnN4RibQEJydZbFa+fl1is84tl/5CeOn4BVxQlycAMuQfhE7NhP9xutaAFjecCfdLxTMOCg==",
+  "success": true,
+  "projectFilePath": "C:\\FTT\\lgpduvidas\\LgpDuvidas\\LgpDuvidas.iOS\\LgpDuvidas.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pedro.rafael\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.6.0.1141\\xamarin.forms.4.6.0.1141.nupkg.sha512"
+  ],
+  "logs": []
+}
