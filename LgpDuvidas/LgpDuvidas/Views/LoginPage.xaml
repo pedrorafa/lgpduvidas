@@ -4,10 +4,25 @@
              x:Class="LgpDuvidas.Views.LoginPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button Text="Login" Clicked="Login"/>
+            <StackLayout VerticalOptions="CenterAndExpand" >
+                <Label Text="Usuário"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="CenterAndExpand" />
+                <Entry WidthRequest="100"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="CenterAndExpand"
+                       TextChanged="Login_TextChanged"/>
+                <Label Text="Senha"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="CenterAndExpand" />
+                <Entry WidthRequest="100"
+                       VerticalOptions="Center" 
+                       HorizontalOptions="CenterAndExpand"
+                       IsPassword="true"
+                       TextChanged="Pass_TextChanged"/>
+            </StackLayout>
+            <Button Text="Login" Clicked="Login">
+            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -14,6 +14,7 @@ namespace LgpDuvidas
             InitializeComponent();
 
             DependencyService.Register<WatsonAssistantService>();
+            DependencyService.Register<AuthService>();
             MainPage = new AppShell();
             Shell.Current.GoToAsync("//LoginPage");
         }

@@ -25,6 +25,9 @@
     <Compile Update="CustomCells\TextInViewCell .xaml.cs">
       <DependentUpon>TextInViewCell .xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\HistoryPage.xaml.cs">
+      <DependentUpon>HistoryPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

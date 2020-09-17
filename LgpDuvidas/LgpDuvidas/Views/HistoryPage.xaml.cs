@@ -5,9 +5,9 @@ using Xamarin.Forms.Xaml;
 
 namespace LgpDuvidas.Views
 {
-    public partial class AboutPage : ContentPage
+    public partial class HistoryPage : ContentPage
     {
-        public AboutPage()
+        public HistoryPage()
         {
             InitializeComponent();
         }
