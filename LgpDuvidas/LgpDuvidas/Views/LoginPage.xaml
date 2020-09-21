@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LgpDuvidas.Views.LoginPage">
+             x:Class="LgpDuvidas.Views.LoginPage"
+             xmlns:vm="clr-namespace:LgpDuvidas.ViewModels">
+
+    <ContentPage.BindingContext>
+        <vm:LoginPageViewModel />
+    </ContentPage.BindingContext>
+    
     <ContentPage.Content>
         <StackLayout>
             <StackLayout VerticalOptions="CenterAndExpand" >
@@ -11,7 +17,7 @@
                 <Entry WidthRequest="100"
                        VerticalOptions="Center" 
                        HorizontalOptions="CenterAndExpand"
-                       TextChanged="Login_TextChanged"/>
+                       Text="{Binding UserModel.user}"/>
                 <Label Text="Senha"
                        VerticalOptions="Center" 
                        HorizontalOptions="CenterAndExpand" />
@@ -19,10 +25,22 @@
                        VerticalOptions="Center" 
                        HorizontalOptions="CenterAndExpand"
                        IsPassword="true"
-                       TextChanged="Pass_TextChanged"/>
+                       Text="{Binding UserModel.pass}"/>
+                <Button Text="Login" 
+                        Command="{Binding Login}"
+                        IsEnabled="{Binding !IsLoading}"
+                        VerticalOptions="Center" 
+                        HorizontalOptions="CenterAndExpand"/>
+                <ActivityIndicator x:Name="actInd"
+                             IsRunning="{Binding IsLoading}"
+                             IsVisible="{Binding IsLoading}" Color="Red"/>
+                <Label IsVisible="{Binding HasError}"
+                       VerticalOptions="Center"
+                       HorizontalOptions="CenterAndExpand"
+                       TextColor="Red">
+                    Erro ao tentar logar, usuário ou senha inválida!
+                </Label>
             </StackLayout>
-            <Button Text="Login" Clicked="Login">
-            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
