@@ -1,7 +1,7 @@
 ﻿using LgpDuvidas.Models;
 using System.Threading.Tasks;
 
-namespace LgpDuvidas.Services
+namespace LgpDuvidas.Interfaces
 {
     public interface IWatsonAssistantService
     {

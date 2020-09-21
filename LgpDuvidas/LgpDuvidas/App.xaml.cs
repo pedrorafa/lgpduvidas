@@ -1,8 +1,6 @@
-﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using LgpDuvidas.Data;
 using LgpDuvidas.Services;
-using LgpDuvidas.Views;
+using Xamarin.Forms;
 
 namespace LgpDuvidas
 {
@@ -14,7 +12,11 @@ namespace LgpDuvidas
             InitializeComponent();
 
             DependencyService.Register<WatsonAssistantService>();
+            DependencyService.Register<AnalyticsService>();
+
             DependencyService.Register<AuthService>();
+            DependencyService.Register<DbContext>();
+
             MainPage = new AppShell();
             Shell.Current.GoToAsync("//LoginPage");
         }

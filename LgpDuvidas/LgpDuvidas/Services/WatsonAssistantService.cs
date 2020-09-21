@@ -1,4 +1,5 @@
-﻿using LgpDuvidas.Models;
+﻿using LgpDuvidas.Interfaces;
+using LgpDuvidas.Models;
 using Newtonsoft.Json;
 using System;
 using System.Net.Http;
