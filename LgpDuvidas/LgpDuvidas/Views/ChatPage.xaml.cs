@@ -1,4 +1,6 @@
-﻿using LgpDuvidas.ViewModels;
+﻿using LgpDuvidas.Interfaces;
+using LgpDuvidas.ViewModels;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,7 +20,8 @@ namespace LgpDuvidas.Views
             vm.Messages.CollectionChanged += (sender, e) =>
             {
                 var target = vm.Messages[vm.Messages.Count - 1];
-                MessagesListView.ScrollTo(target, ScrollToPosition.End, true);
+                MessagesListView.ScrollTo(target, ScrollToPosition.End, true);                
+                Vibration.Vibrate();
             };
         }
 

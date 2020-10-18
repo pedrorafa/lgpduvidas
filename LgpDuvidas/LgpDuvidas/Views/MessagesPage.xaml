@@ -1,14 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="LgpDuvidas.Views.HistoryPage"
+             x:Class="LgpDuvidas.Views.MessagesPage"
              xmlns:vm="clr-namespace:LgpDuvidas.ViewModels"
              Title="{Binding Title}">
-    
-    <ContentPage.BindingContext>
-        <vm:HistoryViewModel />
-    </ContentPage.BindingContext>
-    
+        
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="Accent">#96d1ff</Color>
@@ -16,12 +12,13 @@
     </ContentPage.Resources>
     <ScrollView Grid.Row="1">
         <StackLayout Orientation="Horizontal" Padding="30,24,30,24">
-            <ListView ItemsSource="{Binding Itens}">
+            <ListView ItemsSource="{Binding Messages}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout >
-                                <Label  Text="{Binding Description}" FontAttributes="Bold" />
+                                <Label  Text="{Binding Input}" FontAttributes="Bold"  VerticalTextAlignment="Start"/>
+                                <Label  Text="{Binding Output}" FontAttributes="Italic" VerticalTextAlignment="End"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

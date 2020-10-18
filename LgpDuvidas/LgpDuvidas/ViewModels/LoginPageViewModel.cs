@@ -1,6 +1,7 @@
 ﻿using LgpDuvidas.Interfaces;
 using LgpDuvidas.Models;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -11,8 +12,19 @@ namespace LgpDuvidas.ViewModels
         public IAuthService _authService => DependencyService.Get<IAuthService>();
         public AuthModel UserModel { get; set; }
 
-        public bool IsLoading { get; set; }
-        public bool HasError { get; set; }
+        private bool _isLoading;
+        public bool IsLoading { get { return _isLoading; } set {
+                _isLoading = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private bool _hasError;
+        public bool HasError { get { return _hasError; } set {
+                _hasError = value;
+                OnPropertyChanged();
+            }
+        }
         public ICommand Login { get; }
 
         public LoginPageViewModel()
@@ -24,17 +36,19 @@ namespace LgpDuvidas.ViewModels
             Login = new Command(OnLogin);
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
         public void OnAppearing()
         {
-            IsLoading = false;
             HasError = false;
         }
 
-        private async void OnLogin()
+        private void OnLogin()
         {
             IsLoading = true;
+            ToAuthentication();
+        }
+
+        public async void ToAuthentication()
+        {
             var authRequest = await _authService.Login(UserModel);
             UserModel = authRequest;
 
@@ -45,12 +59,12 @@ namespace LgpDuvidas.ViewModels
                 return;
             }
             await Shell.Current.GoToAsync("//ChatPage");
-            IsLoading = false;
         }
-        public void OnPropertyChanged(string propertyName)
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            this.PropertyChanged?.Invoke(this, new
-                PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

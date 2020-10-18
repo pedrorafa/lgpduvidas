@@ -1,13 +1,4 @@
-﻿using LgpDuvidas.Data;
-using LgpDuvidas.Interfaces;
-using LgpDuvidas.Models;
-using LgpDuvidas.Services;
-using LgpDuvidas.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LgpDuvidas.ViewModels;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

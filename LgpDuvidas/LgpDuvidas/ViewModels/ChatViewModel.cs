@@ -21,22 +21,22 @@ namespace LgpDuvidas.ViewModels
         public ChatViewModel()
         {
             Messages = new ObservableCollection<ChatText>();
-            ActualMessage = new WatsonMessage();
-
-            Messages.Add(new ChatText { text = "Oi, consigo responder dúvidas sobre a LGPD\nGostaria de informar que gravamos as mensagens de nossa conversa, para me atualizar sobre os assuntos mais relevantes e aprimorar meus conhecimentos", isResponse = true });
-
             SendMessage = new Command(OnSendMessage);
-            _countErros = 0;
         }
-
 
         public void OnAppearing()
         {
+            ActualMessage = new WatsonMessage();
+            if (Messages.Count <= 0)
+                Messages.Add(new ChatText { text = "Oi, consigo responder dúvidas sobre a LGPD\nGostaria de informar que gravamos as mensagens de nossa conversa, para me atualizar sobre os assuntos mais relevantes e aprimorar meus conhecimentos", isResponse = true });
+            _countErros = 0;
         }
 
         private int _countErros = 0;
         private async void OnSendMessage()
         {
+            DependencyService.Get<IKeyboardHelper>().HideKeyboard();
+
             if (String.IsNullOrWhiteSpace(input))
                 return;
 

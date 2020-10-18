@@ -42,6 +42,8 @@ namespace LgpDuvidas.Services
         {
             try
             {
+                auth.user = auth.user.Trim();
+                auth.pass = auth.pass.Trim();
                 var content = new StringContent(JsonConvert.SerializeObject(auth), Encoding.UTF8, "application/json");
                 var response = _client.PostAsync("login", content);
                 response.Wait();
@@ -54,6 +56,20 @@ namespace LgpDuvidas.Services
             }
             catch (Exception err)
             {
+            }
+            return auth;
+        }
+        public async Task<AuthModel> Refresh()
+        {
+            AuthModel auth;
+            try
+            {
+                auth = _dbContext.Connection.Table<AuthModel>().FirstOrDefault() ?? new AuthModel();
+                auth = await this.Login(auth);
+            }
+            catch (Exception err)
+            {
+                auth = new AuthModel();
             }
             return auth;
         }

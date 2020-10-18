@@ -37,7 +37,7 @@
                     HorizontalOptions="FillAndExpand"  
                     Placeholder="Pergunta..."  
                     Text="{Binding input}" Keyboard="Chat" Margin="4" />
-            <Image Source="sendIcon.png" WidthRequest="40" HeightRequest="40" Margin="4" >
+            <Image Source="send" WidthRequest="40" HeightRequest="40" Margin="4" >
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer
                                 Command="{Binding SendMessage}" />

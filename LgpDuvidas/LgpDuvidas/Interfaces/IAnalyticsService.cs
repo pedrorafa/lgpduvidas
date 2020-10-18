@@ -6,6 +6,6 @@ namespace LgpDuvidas.Interfaces
 {
     public interface IAnalyticsService
     {
-        Task<IEnumerable<Message>> GetMessages();
+        Task<IEnumerable<Entity>> GetMessages();
     }
 }
