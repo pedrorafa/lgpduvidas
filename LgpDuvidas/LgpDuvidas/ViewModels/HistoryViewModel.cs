@@ -1,34 +1,70 @@
-﻿using LgpDuvidas.Data;
-using LgpDuvidas.Interfaces;
+﻿using LgpDuvidas.Interfaces;
 using LgpDuvidas.Models;
 using LgpDuvidas.Views;
-using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace LgpDuvidas.ViewModels
 {
-    public class HistoryViewModel
+    public class HistoryViewModel : INotifyPropertyChanged
     {
         private IAnalyticsService _analyticsService => DependencyService.Get<IAnalyticsService>();
         public IAuthService _authService => DependencyService.Get<IAuthService>();
-        public bool Loading { get; set; }
+        private bool _isLoading;
+        public bool IsLoading
+        {
+            get { return _isLoading; }
+            set
+            {
+                _isLoading = value;
+                OnPropertyChanged();
+            }
+        }
         public string Title { get; set; }
-        public List<Entity> Itens { get; set; }
+        private List<Entity> _itens { get; set; }
+        public List<Entity> Entities
+        {
+            get { return _itens; }
+            set
+            {
+                _itens = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Entity _ItemSelected;
+        public Entity ItemSelected
+        {
+            get
+            {
+                return _ItemSelected;
+            }
+            set
+            {
+                if (_ItemSelected != value)
+                {
+                    _ItemSelected = value;
+                    OnOpenEntity();
+                }
+            }
+        }
         public ICommand OpenEntity { get; }
         public HistoryViewModel()
         {
             Title = "History";
             OpenEntity = new Command(OnOpenEntity);
+            IsLoading = true;
+            LoadMessages();
         }
 
         public void OnAppearing()
         {
-            Loading = true;
-            LoadMessages();
+            //IsLoading = true;
+            //LoadMessages();
         }
 
         public async void LoadMessages()
@@ -42,14 +78,20 @@ namespace LgpDuvidas.ViewModels
                 items = await _analyticsService.GetMessages();
             }
             if (items != null)
-                Itens = items.ToList();
-            Loading = false;
+                Entities = items.ToList();
+            IsLoading = false;
         }
 
         private async void OnOpenEntity()
         {
-            var page = new MessagesPage(Itens[0].Messages.ToList());
+            var page = new MessagesPage(_ItemSelected.Description, _ItemSelected.Messages.ToList());
             await Shell.Current.Navigation.PushAsync(page);
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

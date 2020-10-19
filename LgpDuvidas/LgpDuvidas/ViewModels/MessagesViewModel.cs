@@ -8,9 +8,9 @@ namespace LgpDuvidas.ViewModels
     {
         public string Title { get; set; }
         public List<Message> Messages { get; set; }
-        public MessagesViewModel(IEnumerable<Message> messages)
+        public MessagesViewModel(string title,IEnumerable<Message> messages)
         {
-            Title = "Messages";
+            Title = $"{title} - Messages";
             Messages = messages.ToList();
         }
         public void OnAppearing()

@@ -1,6 +1,5 @@
 ﻿using LgpDuvidas.Interfaces;
 using LgpDuvidas.Models;
-using LgpDuvidas.Services;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;

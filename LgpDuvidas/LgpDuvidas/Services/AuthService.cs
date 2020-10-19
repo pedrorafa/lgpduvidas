@@ -45,11 +45,10 @@ namespace LgpDuvidas.Services
                 auth.user = auth.user.Trim();
                 auth.pass = auth.pass.Trim();
                 var content = new StringContent(JsonConvert.SerializeObject(auth), Encoding.UTF8, "application/json");
-                var response = _client.PostAsync("login", content);
-                response.Wait();
+                var response = await _client.PostAsync("login", content);
 
-                response.Result.EnsureSuccessStatusCode();
-                auth.Token = await response.Result.Content.ReadAsStringAsync();
+                response.EnsureSuccessStatusCode();
+                auth.Token = await response.Content.ReadAsStringAsync();
                 auth.Token = auth.Token.Replace("\"", "");
 
                 _dbContext.Connection.InsertOrReplace(auth);

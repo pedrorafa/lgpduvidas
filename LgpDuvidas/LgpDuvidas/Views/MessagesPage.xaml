@@ -11,7 +11,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ScrollView Grid.Row="1">
-        <StackLayout Orientation="Horizontal" Padding="30,24,30,24">
+        <StackLayout Orientation="Vertical" Padding="30,24,30,24">
             <ListView ItemsSource="{Binding Messages}">
                 <ListView.ItemTemplate>
                     <DataTemplate>

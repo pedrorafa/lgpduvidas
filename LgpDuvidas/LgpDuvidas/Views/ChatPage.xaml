@@ -20,7 +20,7 @@
     </ContentPage.BindingContext>
 
     <StackLayout>
-        <ScrollView MinimumWidthRequest="1000">
+        <ScrollView Orientation="Vertical" MinimumWidthRequest="1000">
             <ListView 
                 x:Name="MessagesListView" 
                 ItemTemplate="{StaticResource MessageTemplateSelector}" 
@@ -29,7 +29,7 @@
                 SeparatorVisibility="None" 
                 IsEnabled="True"/>
         </ScrollView>
-        <StackLayout Orientation="Horizontal" 
+        <StackLayout Orientation="Vertical" 
                      BackgroundColor="White" 
                      VerticalOptions="EndAndExpand"
                      HeightRequest="50">

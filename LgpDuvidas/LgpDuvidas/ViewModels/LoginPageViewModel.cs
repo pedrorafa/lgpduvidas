@@ -7,20 +7,28 @@ using Xamarin.Forms;
 
 namespace LgpDuvidas.ViewModels
 {
-    public class LoginPageViewModel: INotifyPropertyChanged
+    public class LoginPageViewModel : INotifyPropertyChanged
     {
         public IAuthService _authService => DependencyService.Get<IAuthService>();
         public AuthModel UserModel { get; set; }
 
         private bool _isLoading;
-        public bool IsLoading { get { return _isLoading; } set {
+        public bool IsLoading
+        {
+            get { return _isLoading; }
+            set
+            {
                 _isLoading = value;
                 OnPropertyChanged();
             }
         }
 
         private bool _hasError;
-        public bool HasError { get { return _hasError; } set {
+        public bool HasError
+        {
+            get { return _hasError; }
+            set
+            {
                 _hasError = value;
                 OnPropertyChanged();
             }

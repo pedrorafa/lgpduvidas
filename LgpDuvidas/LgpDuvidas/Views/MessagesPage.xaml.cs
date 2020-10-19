@@ -11,9 +11,9 @@ namespace LgpDuvidas.Views
     public partial class MessagesPage : ContentPage
     {
         MessagesViewModel vm;
-        public MessagesPage(IEnumerable<Message> messages)
+        public MessagesPage(string title, IEnumerable<Message> messages)
         {
-            BindingContext = vm = new MessagesViewModel(messages);
+            BindingContext = vm = new MessagesViewModel(title, messages);
             InitializeComponent();
         }
         protected override void OnAppearing()

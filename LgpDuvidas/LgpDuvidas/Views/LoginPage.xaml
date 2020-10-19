@@ -43,7 +43,7 @@
                                IsVisible="{Binding IsLoading}" />
             <Label Grid.Row="4"               
                    IsVisible="{Binding HasError}"
-                   Margin="0,10,0,0" FontSize="12">
+                   Margin="0,10,0,0" FontSize="12" TextColor="Red">
                 Erro ao tentar logar, usuário ou senha inválida!
             </Label>
         </Grid>
