@@ -13,14 +13,16 @@ namespace LgpDuvidas.Services
 {
     public class AnalyticsService : IAnalyticsService
     {
-        private IDbContext _dbContext => DependencyService.Get<IDbContext>();
+        private IAuthService _authService => DependencyService.Get<IAuthService>();
 
         private readonly HttpClient _client;
         private AuthModel auth;
 
         public AnalyticsService()
         {
-            auth = _dbContext.Connection.Table<AuthModel>().FirstOrDefault() ?? new AuthModel();
+            var oauth = _authService.GetAuth();
+            oauth.Wait();
+            auth = oauth.Result;
             _client = new HttpClient
             {
                 BaseAddress = new Uri("https://lgpduvidas.azurewebsites.net/api/")

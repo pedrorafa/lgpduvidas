@@ -52,6 +52,7 @@ namespace LgpDuvidas.ViewModels
         private void OnLogin()
         {
             IsLoading = true;
+            HasError = false;
             ToAuthentication();
         }
 

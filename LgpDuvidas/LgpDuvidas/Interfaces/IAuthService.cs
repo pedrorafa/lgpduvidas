@@ -7,6 +7,7 @@ namespace LgpDuvidas.Interfaces
     {
         Task<AuthModel> Register(AuthModel input);
         Task<AuthModel> Login(AuthModel input);
+        Task<AuthModel> GetAuth();
         Task<AuthModel> Refresh();
     }
 }

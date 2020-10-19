@@ -58,6 +58,19 @@ namespace LgpDuvidas.Services
             }
             return auth;
         }
+        public async Task<AuthModel> GetAuth()
+        {
+            AuthModel auth;
+            try
+            {
+                auth = JsonConvert.DeserializeObject<AuthModel>(await SecureStorage.GetAsync("oauth_token")) ?? new AuthModel();
+            }
+            catch (Exception err)
+            {
+                auth = new AuthModel();
+            }
+            return auth;
+        }
         public async Task<AuthModel> Refresh()
         {
             AuthModel auth;
