@@ -2,6 +2,7 @@
 using LgpDuvidas.Helpers;
 using LgpDuvidas.Interfaces;
 using LgpDuvidas.Services;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace LgpDuvidas
@@ -29,7 +30,7 @@ namespace LgpDuvidas
             }
 
             MainPage = new AppShell();
-            Shell.Current.GoToAsync("//LoginPage");
+            Shell.Current.GoToAsync("//LoginPage");             
         }
 
         protected override void OnStart()

@@ -6,13 +6,13 @@ using System;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace LgpDuvidas.Services
 {
     public class AuthService : IAuthService
     {
-        private IDbContext _dbContext => DependencyService.Get<IDbContext>();
         private readonly HttpClient _client;
 
         public AuthService()
@@ -51,7 +51,7 @@ namespace LgpDuvidas.Services
                 auth.Token = await response.Content.ReadAsStringAsync();
                 auth.Token = auth.Token.Replace("\"", "");
 
-                _dbContext.Connection.InsertOrReplace(auth);
+                await SecureStorage.SetAsync("oauth_token", JsonConvert.SerializeObject(auth));
             }
             catch (Exception err)
             {
@@ -63,7 +63,7 @@ namespace LgpDuvidas.Services
             AuthModel auth;
             try
             {
-                auth = _dbContext.Connection.Table<AuthModel>().FirstOrDefault() ?? new AuthModel();
+                auth = JsonConvert.DeserializeObject<AuthModel>(await SecureStorage.GetAsync("oauth_token")) ?? new AuthModel();                
                 auth = await this.Login(auth);
             }
             catch (Exception err)
