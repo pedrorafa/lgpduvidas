@@ -14,7 +14,7 @@
             <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
 
-        <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="DarkGray" CornerRadius="5">
+        <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="{StaticResource Primary}" CornerRadius="5">
             <Frame.HasShadow>
                 <OnPlatform x:TypeArguments="x:Boolean" iOS="false" Android="true"/>
             </Frame.HasShadow>
