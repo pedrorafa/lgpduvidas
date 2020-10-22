@@ -3,6 +3,7 @@ using LgpDuvidas.Models;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace LgpDuvidas.ViewModels
@@ -11,6 +12,17 @@ namespace LgpDuvidas.ViewModels
     {
         public IAuthService _authService => DependencyService.Get<IAuthService>();
         public AuthModel UserModel { get; set; }
+
+        private bool _hasConnection;
+        public bool HasConnection
+        {
+            get {
+                var current = Connectivity.NetworkAccess;
+
+                _hasConnection = current == NetworkAccess.Internet;
+                return _hasConnection;
+            }
+        }
 
         private bool _isLoading;
         public bool IsLoading

@@ -46,6 +46,11 @@
                    Margin="0,10,0,0" FontSize="12" TextColor="Red">
                 Erro ao tentar logar, usuário ou senha inválida!
             </Label>
+            <Label Grid.Row="5"               
+                   IsVisible="{Binding HasConnection, Converter={Helpers:InverseBoolConverter}}"
+                   Margin="0,10,0,0" FontSize="12" TextColor="Red">
+                É necessário conexão com a internet para funcionamento da aplicação!
+            </Label>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
