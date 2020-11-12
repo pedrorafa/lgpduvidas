@@ -24,8 +24,8 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="Chat" Icon="tab_about.png" Route="ChatPage" ContentTemplate="{DataTemplate local:ChatPage}" />
-        <ShellContent Title="History" Icon="tab_about.png" Route="HistoryPage" ContentTemplate="{DataTemplate local:HistoryPage}" />
+        <ShellContent Title="Chat" Icon="chat.png" Route="ChatPage" ContentTemplate="{DataTemplate local:ChatPage}" />
+        <ShellContent Title="History" Icon="history.png" Route="HistoryPage" ContentTemplate="{DataTemplate local:HistoryPage}" />
     </TabBar>
     <ShellContent Route="MessagesPage" Shell.FlyoutBehavior="Disabled" ContentTemplate="{DataTemplate local:MessagesPage}" />
 
