@@ -34,13 +34,14 @@ namespace LgpDuvidas.ViewModels
         private int _countErros = 0;
         private async void OnSendMessage()
         {
-            DependencyService.Get<IKeyboardHelper>().HideKeyboard();
-
             if (String.IsNullOrWhiteSpace(input))
                 return;
 
             ActualMessage.input = input;
             Messages.Add(new ChatText { isResponse = false, text = input });
+
+            DependencyService.Get<IKeyboardHelper>().HideKeyboard();
+            ActualMessage.input = string.Empty;
 
             ActualMessage = await WatsonAssistant.Send(ActualMessage);
             if (ActualMessage != null)
